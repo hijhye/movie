@@ -163,3 +163,120 @@ body {
   cursor: pointer;
   color: #fff;
 }
+/*detail*/
+#detail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 30;
+  display: none;
+}
+#detail.on {
+  display: block;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: #bf0000; /* 시안의 강렬한 레드 */
+  display: flex;
+  color: #fff;
+}
+
+.textBox {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  padding: 20px;
+}
+
+#detailTitle {
+  font-size: 160px;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -3px;
+  word-break: keep-all;
+}
+
+.pointWrap {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+.pointWrap img {
+  width: 60px;
+}
+#detailPoint {
+  font-size: 4rem;
+}
+
+/* 줄거리 */
+#detailOverview {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: right;
+  word-break: keep-all;
+  max-width: 40%;
+  align-self: flex-end;
+
+  max-height: 30vh;
+  overflow-y: auto;
+}
+#detailOverview::-webkit-scrollbar {
+  display: none;
+}
+
+/* 오른쪽 */
+.imgBox {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  border-left: 2px solid #fff; /* 중간 세로선 */
+}
+
+#detail .btnWrap {
+  height: 100px;
+  display: flex;
+  border-bottom: 2px solid #fff;
+}
+
+.btnWrap button {
+  flex: 1;
+  background: #a60000;
+  border: none;
+  border-right: 2px solid #fff;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btnWrap button:last-child {
+  border-right: none;
+}
+.btnWrap button:hover {
+  background: #d90000;
+}
+.btnWrap button img {
+  height: 30px;
+}
+
+/* 포스터 영역 */
+.posterWrap {
+  flex: 1;
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+#detailPoster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

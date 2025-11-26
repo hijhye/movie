@@ -62,8 +62,36 @@
             <img src="img/arrow_right.png" />
           </button>
         </div>
+        <div id="detail">
+          <div class="modal">
+            <div class="textBox">
+              <div>
+                <div id="detailTitle"></div>
+                <div class="pointWrap">
+                  <img src="img/thumbIcon.png" />
+                  <p id="detailPoint"></p>
+                </div>
+              </div>
+
+              <div id="detailOverview"></div>
+            </div>
+            <div class="imgBox">
+              <div class="btnWrap">
+                <button onclick="prevMovie()">
+                  <img src="img/arrow_left.png" />
+                </button>
+                <button id="list"><img src="img/list.png" /></button>
+                <button onclick="nextMovie()">
+                  <img src="img/arrow_right.png" />
+                </button>
+              </div>
+              <div class="posterWrap">
+                <img id="detailPoster" src="img/image 85.png" />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="detail"></div>
     </div>
     <script src="js/custom.js"></script>
   </body>

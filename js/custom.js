@@ -7,6 +7,8 @@ let currentPage = 1;
 let currentList = "now_playing";
 let currentKeyword = "";
 let totalPage = "";
+let currentMovies = [];
+let currentModalRank = 0;
 const titleMap = {
   now_playing: "현재 상영 중",
   popular: "인기",
@@ -36,6 +38,7 @@ let bottomBtn = document.querySelector("#bottomBtn");
 
 function render(movieList) {
   let result = "";
+  currentMovies = movieList;
 
   movieList.forEach((movie, rank) => {
     // console.log(i + 1);
@@ -47,7 +50,7 @@ function render(movieList) {
       ? `https://media.themoviedb.org/t/p/w355_and_h200_multi_faces${movie.backdrop_path}`
       : "https://placehold.co/355x200/555/FFF?text=No..";
     result += `
-          <li class="movie">
+          <li class="movie" onclick="detailView(${rank})">
             <div class="imgWrap">
               <div class="num">${globalRank}</div>
               <img src="${imgSrc}" alt="${movie.title}">
@@ -150,4 +153,51 @@ function preview() {
     left: 0,
     behavior: "smooth",
   });
+}
+let detail = document.querySelector("#detail");
+let listBtn = document.querySelector("#list");
+listBtn.addEventListener("click", function () {
+  detail.classList.remove("on");
+});
+
+let detailTitle = document.querySelector("#detailTitle");
+let detailPoster = document.querySelector("#detailPoster");
+let detailPoint = document.querySelector("#detailPoint");
+let detailOverview = document.querySelector("#detailOverview");
+
+function detailView(rank) {
+  detail.classList.add("on");
+  let movie = currentMovies[rank];
+
+  detailTitle.innerText = movie.title;
+  detailPoint.innerText = movie.vote_average.toFixed(1);
+  detailOverview.innerText = movie.overview
+    ? movie.overview
+    : "상세 줄거리 정보가 없습니다.";
+
+  if (movie.poster_path) {
+    detailPoster.src = `https://media.themoviedb.org/t/p/original${movie.poster_path}`;
+  } else {
+    detailPoster.src = "https://placehold.co/500x750/000/FFF?text=No+Poster";
+  }
+}
+
+function nextMovie() {
+  currentModalRank++;
+
+  if (currentModalRank >= currentMovies.length) {
+    currentModalRank = 0;
+  }
+
+  detailView(currentModalRank);
+}
+
+function prevMovie() {
+  currentModalRank--;
+
+  if (currentModalRank < 0) {
+    currentModalRank = currentMovies.length - 1;
+  }
+
+  detailView(currentModalRank);
 }
