@@ -163,6 +163,9 @@ body {
   cursor: pointer;
   color: #fff;
 }
+#bottomBtn #home {
+  font-size: 24px;
+}
 /*detail*/
 #detail {
   position: fixed;
