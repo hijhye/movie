@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Let's Movie</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="intro">
+        <div class="title">
+          <div>LET'S</div>
+          <div>MOVIE</div>
+          <div class="word">
+            <ul>
+              <li>MOVIE!</li>
+              <li>MOODY!</li>
+              <li>PICKY!</li>
+              <li>ZOOPY!</li>
+              <li>DOOBIE!</li>
+              <li>WOOBY!</li>
+              <li>BOOMIE!</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="searchWrap">
+          <input id="user" placeholder="|" />
+          <button id="searchBtn">
+            <img src="img/searchIcon.png" />
+          </button>
+        </div>
+        <ul class="btnWrap">
+          <li onclick="movie('now_playing')">NOW PLAYING</li>
+          <li onclick="movie('popular')">POPULAR</li>
+          <li onclick="movie('top_rated')">TOP_RATED</li>
+          <li onclick="movie('upcoming')">UPCOMING</li>
+        </ul>
+      </div>
+
+      <div class="list">
+        <ul id="movieBoard"></ul>
+        <div id="bottomBtn">
+          <button id="prevBtn">
+            <img src="img/arrow_left.png" />
+          </button>
+          <button id="home">LET'S MOVIE</button>
+          <button id="nextBtn">
+            <img src="img/arrow_right.png" />
+          </button>
+        </div>
+      </div>
+      <div class="detail"></div>
+    </div>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

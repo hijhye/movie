@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>modal</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .detail {
+        width: 100%;
+        height: 100vh;
+        background-color: #333;
+        color: #fff;
+      }
+      .modal {
+        background-color: #000;
+        display: flex;
+      }
+      .modal .textBox {
+        width: 60%;
+      }
+      .modal .title {
+        font-size: 100px;
+        font-weight: 900;
+      }
+      .modal .point {
+        display: flex;
+      }
+      #home {
+        position: absolute;
+        bottom: 0;
+      }
+      .imgBox {
+        width: 40%;
+      }
+      .btnWrap {
+        display: flex;
+        justify-content: space-between;
+      }
+      button {
+        background-color: transparent;
+        border: none;
+        height: 100px;
+      }
+      button:nth-child(odd) {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="detail">
+      <div class="modal">
+        <div class="textBox">
+          <div class="title">'패밀리 플랜 2' - The Family Plan 2</div>
+          <div class="point">
+            <img src="img/thumbIcon.png" />
+            <p>8.6</p>
+          </div>
+          <div>
+            "전혀 다르지만 서로에게 가장 소중한 친구가 된 ‘엘파바’와 ‘글린다’.
+            쉬즈에서의 마법같았던 둘의 우정은 오즈의 마법사와 그를 둘러싼
+            비밀들을 알게 되면서 다른 길을 선택할 수밖에 없게 내몰린다. 사람들의
+            시선을 더 이상 두려워하지 않게 된 사악한 마녀 ‘엘파바’와 사람들의
+            사랑을 받으면서도 모든 걸 잃을까 두려운 착한 마녀 ‘글린다’. 서로
+            대척점에 서게 된 두 사람은 거대한 여정의 끝에서 운명을 영원히 바꿀
+            선택을 마주하게 된다."
+          </div>
+        </div>
+        <div class="imgBox">
+          <div class="btnWrap">
+            <button><img src="img/arrow_left.png" /></button>
+            <button><img src="img/list.png" /></button>
+            <button><img src="img/arrow_right.png" /></button>
+          </div>
+          <div class="posterWrap">
+            <img src="img/image 85.png" />
+          </div>
+        </div>
+        <button id="home">HOME</button>
+      </div>
+    </div>
+  </body>
+</html>
