@@ -1,15 +1,23 @@
 //movie
 let APIKey = "10f974a2eddec8dc4c2a71f15af77591";
 
+let listType = document.querySelector("#listType");
+
 let currentPage = 1;
 let currentList = "now_playing";
 let currentKeyword = "";
 let totalPage = "";
-
+const titleMap = {
+  now_playing: "현재 상영 중",
+  popular: "인기",
+  top_rated: "평점 좋은",
+  upcoming: "곧 개봉하는",
+};
 async function movie(lists, page = 1) {
   currentPage = page;
   currentList = lists;
   currentKeyword = "";
+  listType.innerText = `${titleMap[lists]} 영화 목록` || "영화 목록";
   let url = `https://api.themoviedb.org/3/movie/${lists}?api_key=${APIKey}&language=ko-KR&page=${currentPage}`;
 
   let response = await fetch(url);
@@ -71,6 +79,7 @@ searchBtn.addEventListener("click", () => {
   keyword = searchInput.value.trim();
   currentKeyword = keyword;
   //   console.log(keyword);
+  listType.innerText = `${currentKeyword} 관련 영화목록`;
 
   if (currentKeyword == "") {
     alert("검색어를 입력하세요~");
