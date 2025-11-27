@@ -109,7 +109,8 @@ async function search(currentKeyword, currentPage) {
 
 //더보기
 let more = document.querySelector("#nextBtn");
-
+let pageNum = document.querySelector("#pageNum");
+pageNum.innerText = currentPage;
 more.addEventListener("click", moreview);
 function moreview() {
   if (currentPage == totalPage) {
@@ -117,6 +118,7 @@ function moreview() {
     return;
   } else {
     currentPage++;
+    pageNum.innerText = currentPage;
   }
   console.log(currentList, currentPage, currentKeyword);
   if (currentKeyword == "") {
@@ -140,6 +142,7 @@ function preview() {
     return;
   } else {
     currentPage--;
+    pageNum.innerText = currentPage;
   }
 
   console.log(currentList, currentPage, currentKeyword);

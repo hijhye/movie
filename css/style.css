@@ -43,11 +43,10 @@ body {
 .word {
   display: flex;
 }
-.word ul {
-  display: flex;
-  gap: 500px;
-  width: 1000px;
-  overflow: hidden;
+.word .small {
+  font-weight: 300;
+  font-size: 100px;
+  letter-spacing: -5px;
 }
 
 .searchWrap {
@@ -165,6 +164,16 @@ body {
 }
 #bottomBtn #home {
   font-size: 24px;
+}
+#bottomBtn .right {
+  display: flex;
+  align-items: center;
+}
+#pageNum {
+  font-size: 50px;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
 }
 /*detail*/
 #detail {
