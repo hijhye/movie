@@ -106,9 +106,10 @@ body {
   height: 90vh;
   overflow-y: auto;
   margin: 20px 0px;
+  align-content: flex-start;
 }
 #movieBoard::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 .movie {
   display: flex;
@@ -137,7 +138,9 @@ body {
   width: 100%;
   display: block;
   border-radius: 8px;
+  transition: 0.3s;
 }
+
 .movie .num {
   position: absolute;
   z-index: 5;
@@ -192,7 +195,7 @@ body {
 .modal {
   width: 100%;
   height: 100%;
-  background-color: #bf0000; /* 시안의 강렬한 레드 */
+  background-color: #bf0000;
   display: flex;
   color: #fff;
 }
@@ -234,10 +237,8 @@ body {
   line-height: 1.8;
   text-align: right;
   word-break: keep-all;
-  max-width: 40%;
+  max-width: 50%;
   align-self: flex-end;
-
-  max-height: 30vh;
   overflow-y: auto;
 }
 #detailOverview::-webkit-scrollbar {
@@ -249,7 +250,7 @@ body {
   width: 40%;
   display: flex;
   flex-direction: column;
-  border-left: 2px solid #fff; /* 중간 세로선 */
+  border-left: 2px solid #fff;
 }
 
 #detail .btnWrap {
@@ -279,7 +280,7 @@ body {
   height: 30px;
 }
 
-/* 포스터 영역 */
+/* 포스터 */
 .posterWrap {
   flex: 1;
   background: #000;

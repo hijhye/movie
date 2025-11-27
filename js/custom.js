@@ -151,7 +151,7 @@ function preview() {
   } else if (currentList == "") {
     search(currentKeyword, currentPage);
   }
-  window.scrollTo({
+  movieBoard.scrollTo({
     top: 0,
     left: 0,
     behavior: "smooth",
@@ -169,6 +169,7 @@ let detailPoint = document.querySelector("#detailPoint");
 let detailOverview = document.querySelector("#detailOverview");
 
 function detailView(rank) {
+  currentModalRank = rank;
   detail.classList.add("on");
   let movie = currentMovies[rank];
 
