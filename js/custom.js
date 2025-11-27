@@ -106,7 +106,11 @@ async function search(currentKeyword, currentPage) {
   //   console.log(movieList);.
   render(movieList);
 }
-
+searchInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    searchBtn.click(); // "검색 버튼을 대신 눌러줘!"
+  }
+});
 //더보기
 let more = document.querySelector("#nextBtn");
 let pageNum = document.querySelector("#pageNum");
